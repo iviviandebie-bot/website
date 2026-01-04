@@ -12,13 +12,35 @@
             theme: {
                 extend: {
                     colors: {
-                        azores: {
-                            light: '#4FD1C5',
-                            DEFAULT: '#319795',
-                            dark: '#2C7A7B',
+                        /* Ocean Blue - Primary blue tones for the main brand */
+                        ocean: {
+                            light: '#93C5FD',   /* Light sky blue */
+                            DEFAULT: '#3B82F6', /* Vibrant blue */
+                            dark: '#1E40AF',    /* Deep royal blue */
                         },
-                        urgency: {
-                            DEFAULT: '#E53E3E',
+                        /* Deep Sea - Darker blue accents */
+                        sea: {
+                            light: '#60A5FA',   /* Bright blue */
+                            DEFAULT: '#2563EB', /* Strong blue */
+                            dark: '#1E3A8A',    /* Navy blue */
+                        },
+                        /* Emerald - Primary green tones */
+                        emerald: {
+                            light: '#6EE7B7',   /* Soft mint green */
+                            DEFAULT: '#10B981', /* Vibrant emerald */
+                            dark: '#047857',    /* Deep forest green */
+                        },
+                        /* Teal - Transitional blue-green */
+                        teal: {
+                            light: '#5EEAD4',   /* Light aqua */
+                            DEFAULT: '#14B8A6', /* Teal */
+                            dark: '#0F766E',    /* Deep teal */
+                        },
+                        /* Cyan - Accent blue-green for highlights */
+                        cyan: {
+                            light: '#67E8F9',   /* Light cyan */
+                            DEFAULT: '#06B6D4', /* Bright cyan */
+                            dark: '#0E7490',    /* Deep cyan */
                         }
                     },
                     fontFamily: {
@@ -34,8 +56,10 @@
         .hero-bg {
             background-image:
               linear-gradient(
-                rgb(0, 140, 255),
-                rgba(0, 255, 13, 0.55)
+                135deg,
+                rgba(30, 64, 175, 0.90),     /* ocean-dark - deep royal blue */
+                rgba(20, 184, 166, 0.85),    /* teal - transitional blue-green */
+                rgba(16, 185, 129, 0.90)     /* emerald - vibrant green */
               ),
               url('https://images.unsplash.com/photo-1506625952907-70149c74a6e9?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -58,7 +82,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#steun" class="bg-urgency hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition transform hover:scale-105">
+            <a href="#steun" class="bg-emerald hover:bg-emerald-dark text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition transform hover:scale-105">
                 Lees hoe je kunt steunen
             </a>
             <a href="#ons-verhaal" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full text-lg border-2 border-white/40 transition">
@@ -71,7 +95,7 @@
 <!-- ONS VERHAAL -->
 <section id="ons-verhaal" class="py-20 px-4">
     <div class="max-w-5xl mx-auto text-center mb-14">
-        <h2 class="text-3xl md:text-5xl font-bold text-azores-dark mb-6">
+        <h2 class="text-3xl md:text-5xl font-bold text-ocean-dark mb-6">
             Twee vriendinnen, één dringende wens
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -96,7 +120,7 @@
                 Ilona heeft eveneens kwetsbaarheden die extra ondersteuning vragen.
                 We kennen elkaars grenzen en kracht, en juist daarom is onze vriendschap zo waardevol.
             </p>
-            <blockquote class="border-l-4 border-azores p-4 bg-azores-light/10 italic text-azores-dark font-semibold text-xl">
+            <blockquote class="border-l-4 border-teal p-4 bg-teal-light/20 italic text-teal-dark font-semibold text-xl">
                 Het gaat niet om wat we missen, maar om wat we nog samen kunnen ervaren.
             </blockquote>
         </div>
@@ -104,7 +128,7 @@
 </section>
 
 <!-- WAAROM AZOREN -->
-<section class="py-20 bg-azores-dark text-white px-4">
+<section class="py-20 bg-gradient-to-br from-ocean-dark via-teal to-emerald-dark text-white px-4">
     <div class="max-w-5xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-10">
             Waarom de Azoren – en waarom nu
@@ -139,9 +163,9 @@
 </section>
 
 <!-- STEUN -->
-<section id="steun" class="py-20 px-4">
+<section id="steun" class="py-20 px-4 bg-gradient-to-b from-white to-cyan-light/30">
     <div class="max-w-4xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-ocean-dark">
             Steun deze zorgreis
         </h2>
         <p class="text-lg text-gray-600">
@@ -150,14 +174,14 @@
         </p>
     </div>
 
-    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-10 space-y-6">
+    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-10 space-y-6 border-t-4 border-emerald">
         <p class="text-lg">
             Steun is <strong>volledig vrijwillig</strong>.
             Bijdragen zijn bedoeld voor noodzakelijke zorg, begeleiding,
             aangepast vervoer en verblijf.
         </p>
 
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-sm text-gray-700">
+        <div class="bg-emerald-light/40 border border-emerald rounded-xl p-6 text-sm text-emerald-dark">
             <strong>Transparantie</strong><br>
             Eventuele bijdragen verlopen via onze coach of zorgverlener
             en worden niet privé besteed.
@@ -165,7 +189,7 @@
         </div>
 
         <a href="#"
-           class="block text-center bg-urgency hover:bg-red-700 text-white text-xl font-bold py-4 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+           class="block text-center bg-gradient-to-r from-ocean to-emerald text-white text-xl font-bold py-4 px-8 rounded-full shadow-lg transition transform hover:scale-105 hover:shadow-xl">
             Naar donatiepagina
         </a>
 
@@ -176,16 +200,16 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 py-14 px-4 text-center">
+<footer class="bg-gradient-to-r from-ocean-dark to-emerald-dark text-white py-14 px-4 text-center">
     <div class="max-w-4xl mx-auto">
         <h3 class="text-white text-2xl font-bold mb-4">
             Dank je wel voor het lezen
         </h3>
-        <p class="mb-8 text-lg">
+        <p class="mb-8 text-lg text-white/90">
             Het delen van ons verhaal wordt enorm gewaardeerd.
         </p>
 
-        <p class="text-sm opacity-50">
+        <p class="text-sm text-white/60">
             © 2026 Rita & Ilona.  
             Deze website heeft een informatief karakter en bevat geen medische of financiële garanties.
         </p>
